@@ -1,0 +1,7 @@
+/dataset
+*.idea
+*.vscode
+*__pycache__
+/runs
+/wandb
+/weights
