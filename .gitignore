@@ -1,6 +1,6 @@
 /dataset
 *.idea
-*.vscode
+*.vscode/
 *__pycache__
 /runs
 /wandb

@@ -154,14 +154,13 @@ def main(opt):
                     if i==5:
                         break
                 
-            mAP, ap_per_class = eval_mAP(results_list, targets_list, eval_iou_thresh, num_classes)
-            eval_voc(results_list, targets_list, eval_iou_thresh, num_classes)
+            mAP, ap_per_class = eval_voc(results_list, targets_list, eval_iou_thresh, num_classes)
             with open(os.path.join(save_dir, 'AP_per_class.pkl'), 'wb') as f:
                 pk.dump(ap_per_class, f)
-            print("epoch {}, mAP={:.4f}".format(epoch, mAP))
+            print("epoch {}, mAP={:.3f}".format(epoch, mAP))
             print("ap\t", end="")
             for ap in ap_per_class:
-                print("{:.4f}\t".format(ap), end='')
+                print("{:.2f}\t".format(ap), end='')
             print(" ")
             print("class\t", end="")
             for i in range(len(ap_per_class)):
